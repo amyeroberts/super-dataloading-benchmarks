@@ -12,7 +12,7 @@ streaming = True
 ds = load_dataset(str(root / "imagefolder"), split="train", streaming=streaming)
 ds = ds.cast_column("image", Image(decode=decode))
 
-for i, example in tqdm(enumerate(ds), unit="ex"):
+for i, example in tqdm(enumerate(ds), unit="ex", total=10_000):
     if i == 0:
         print("First example: \t", str(example)[:50], "...")
     if i == warmup:

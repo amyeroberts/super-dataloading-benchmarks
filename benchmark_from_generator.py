@@ -35,7 +35,7 @@ process = lambda x: {"image": {"bytes": x["image"], "path": "foo.jpg"}}
 ds = IterableDataset.from_generator(gen, gen_kwargs=gen_kwargs).map(process)
 ds = ds.cast(Features({"image": Image(decode=decode), "label": Value("int32")}))
 
-for i, example in tqdm(enumerate(ds), unit="ex"):
+for i, example in tqdm(enumerate(ds), unit="ex", total=10_000):
     if i == 0:
         print("First example: \t", str(example)[:500], "...")
     if i == warmup:

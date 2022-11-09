@@ -13,7 +13,7 @@ ds = WebDataset(filepaths)
 if decode:
     ds = ds.decode("pil").to_tuple("image.jpg", "label.id")
 
-for i, example in tqdm(enumerate(ds), unit="ex"):
+for i, example in tqdm(enumerate(ds), unit="ex", total=10_000):
     if i == 0:
         print("First example: \t", str(example)[:500], "...")
     if i == warmup:
