@@ -2,11 +2,12 @@ from datasets import load_dataset, Image
 from pathlib import Path
 from tqdm import tqdm
 import time
+import sys
 
 root = Path(__file__).resolve().parent
 warmup = 100
-decode = True
-streaming = False
+decode = "--decode" in sys.argv[1:]
+streaming = True
 
 ds = load_dataset(str(root / "imagefolder"), split="train", streaming=streaming)
 ds = ds.cast_column("image", Image(decode=decode))

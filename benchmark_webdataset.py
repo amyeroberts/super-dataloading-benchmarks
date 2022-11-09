@@ -2,10 +2,11 @@ from webdataset import WebDataset
 from pathlib import Path
 from tqdm import tqdm
 import time
+import sys
 
 root = Path(__file__).resolve().parent
 warmup = 100
-decode = True
+decode = "--decode" in sys.argv[1:]
 
 filepaths = sorted([str(p) for p in (root / "webdataset").glob("*.tar")])
 ds = WebDataset(filepaths)

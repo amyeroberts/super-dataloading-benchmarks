@@ -3,10 +3,11 @@ from datasets.download.streaming_download_manager import ArchiveIterable
 from pathlib import Path
 from tqdm import tqdm
 import time
+import sys
 
 root = Path(__file__).resolve().parent
 warmup = 100
-decode = True
+decode = "--decode" in sys.argv[1:]
 
 gen_kwargs = {
     "filepaths": sorted([str(p) for p in (root / "webdataset").glob("*.tar")])
