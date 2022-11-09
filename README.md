@@ -28,7 +28,7 @@ Each benchmark computes the average examples/sec using a single process:
 
 - `benchmark_imagefolder` uses `datasets` and the local images
 - `benchmark_webdataset` uses the webdataset data
-- `benchmark_arrow` uses `datasetd` and the arrow data
+- `benchmark_arrow` uses `datasets` and the arrow data
 - `benchmark_from_generator` uses `datasets` IterableDataset.from_generator and the TAR data
 
 ## Results
