@@ -4,6 +4,7 @@
 
 ```bash
 pip install -r requirements.txt
+huggingface-cli login
 python prepare_imagefolder.py
 python prepare_webdataset.py
 python prepare_arrow.py
