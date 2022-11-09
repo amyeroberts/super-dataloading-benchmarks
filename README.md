@@ -20,7 +20,8 @@ Each script prepares the data in a certain format:
 ```bash
 python benchmark_imagefolder.py
 python benchmark_webdataset.py
-python benchmark_arrow.py
+python benchmark_arrow.pypy
+python benchmark_from_generator.py
 ```
 
 Each benchmark computes the average examples/sec using a single process:
