@@ -8,7 +8,7 @@ imgnt = load_dataset("imagenet-1k", streaming=True, split="train", revision=revi
 subset = list(tqdm(imgnt.take(10_000), total=10_000, desc="downloading"))
 
 print("saving 10k images to ./imagefolder")
-d = Path(__file__).resolve() / "imagefolder"
+d = Path(__file__).resolve().parent / "imagefolder"
 d.mkdir(exist_ok=True)
 for i, x in enumerate(tqdm(subset, total=10_000, desc="writing")):
     x["image"].save(d / f"{i:05d}.png")
